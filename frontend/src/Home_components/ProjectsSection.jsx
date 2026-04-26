@@ -1,4 +1,5 @@
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const projects = [
   {
@@ -103,12 +104,12 @@ export const ProjectsSection = () => {
           ))}
         </div>
         <div className="text-center mt-12">
-          <a
+          <Link
             className="hero-button w-fit flex items-center mx-auto gap-2"
-            href="/projects"
+            to="/projects"
           >
             Klik voor meer <ArrowRight size={16} />
-          </a>
+          </Link>
         </div>
       </div>
     </section>
