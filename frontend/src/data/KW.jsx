@@ -93,7 +93,7 @@ export const Kerntaak1 = [
         ],
       },
       {
-        label: "PPF Chatbot",
+        label: "PDF Chatbot",
         images: ["/projects/PdfChatbot/codes/chatbot code.png"],
       },
     ],
