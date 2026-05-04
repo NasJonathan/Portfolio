@@ -37,28 +37,36 @@ const ProjectCard = ({ title, description, links = [], onOpenGallery }) => {
       {isExpanded && links.length > 0 && (
         <div className="bg-gray-50 rounded-lg p-4 mt-4 border border-gray-200 overflow-y-scroll h-40">
           <div className="space-y-2">
-            {links.map((link, index) =>
-              link.images ? (
-                <button
-                  key={index}
-                  onClick={() => onOpenGallery(link.images)}
-                  className="w-full text-left flex items-center text-primary hover:text-blue-700 font-medium text-sm py-2 px-3 hover:bg-white rounded transition-colors cursor-pointer"
-                >
-                  <span className="mr-2">→</span>
-                  {link.label}
-                </button>
-              ) : (
-                <a
-                  key={index}
-                  href={link.url || "#"}
-                  target={link.target || "_self"}
-                  className="flex items-center text-primary hover:text-blue-700 font-medium text-sm py-2 px-3 hover:bg-white rounded transition-colors"
-                >
-                  <span className="mr-2">→</span>
-                  {link.label}
-                </a>
-              ),
-            )}
+            {links.map((link, index) => (
+              <React.Fragment key={index}>
+                {(link.images || link.files || link.video || link.audio) && (
+                  <button
+                    onClick={() =>
+                      onOpenGallery([
+                        ...(link.images || []),
+                        ...(link.files || []),
+                        ...(link.video || []),
+                        ...(link.audio || []),
+                      ])
+                    }
+                    className="w-full text-left flex items-center text-primary hover:text-blue-700 font-medium text-sm py-2 px-3 hover:bg-white rounded transition-colors cursor-pointer"
+                  >
+                    <span className="mr-2">→</span>
+                    {link.label}
+                  </button>
+                )}
+                {!link.images && !link.files && !link.video && !link.audio && (
+                  <a
+                    href={link.url || "#"}
+                    target={link.target || "_self"}
+                    className="flex items-center text-primary hover:text-blue-700 font-medium text-sm py-2 px-3 hover:bg-white rounded transition-colors"
+                  >
+                    <span className="mr-2">→</span>
+                    {link.label}
+                  </a>
+                )}
+              </React.Fragment>
+            ))}
           </div>
         </div>
       )}
@@ -132,12 +140,28 @@ export const KW = () => {
               &times;
             </button>
 
-            {/* Current Image */}
-            <img
-              src={galleryImages[currentImageIndex]}
-              alt={`Slide ${currentImageIndex + 1}`}
-              className="max-h-[80vh] object-contain rounded-md shadow-lg"
-            />
+            {/* Current Media */}
+            {galleryImages[currentImageIndex]?.endsWith(".pdf") ? (
+              <iframe
+                src={`${galleryImages[currentImageIndex]}#toolbar=0`}
+                className="w-full h-[80vh] rounded-md shadow-lg bg-white"
+                title={`Slide ${currentImageIndex + 1}`}
+              />
+            ) : galleryImages[currentImageIndex]?.endsWith(".mp4") ? (
+              <video
+                controls
+                className="max-h-[80vh] w-full rounded-md shadow-lg bg-black"
+                src={galleryImages[currentImageIndex]}
+              >
+                Je browser ondersteunt dit video element niet.
+              </video>
+            ) : (
+              <img
+                src={galleryImages[currentImageIndex]}
+                alt={`Slide ${currentImageIndex + 1}`}
+                className="max-h-[80vh] object-contain rounded-md shadow-lg bg-white"
+              />
+            )}
 
             {/* Navigation Controls */}
             <div className="flex justify-between items-center w-full mt-6">

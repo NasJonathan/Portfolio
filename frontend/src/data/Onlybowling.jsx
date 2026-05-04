@@ -10,7 +10,7 @@ export const tasks = [
   "K1-W2: Plannen en ontwerp",
   "K1-W3: Realiseert software",
   "K1-W4: Testen",
-  "K1-W7: Presenteert opgeleverd werk",
+  "K2-W7: Presenteert opgeleverd werk",
   "K2-W8: Reflectie",
 ];
 

@@ -7,7 +7,6 @@ import { Bewijzen } from "./pages/Bewijzen";
 import { Onlybowling } from "./pages/SchoolProjects/Onlybowling";
 import { PdfChatbot } from "./pages/SchoolProjects/PdfChatbot";
 import { McautherOutlet } from "./pages/SchoolProjects/McautherOutlet";
-import { BollenBroodjes } from "./pages/SchoolProjects/BollenBroodjes";
 import { Wesolved } from "./pages/StageProjects/Wesolved";
 import { Bikebutler } from "./pages/StageProjects/Bikebutler";
 import { BroensbroodBanket } from "./pages/StageProjects/BroensbroodBanket";
@@ -40,12 +39,8 @@ function App() {
           <Route path="/school-project/onlybowling" element={<Onlybowling />} />
           <Route path="/school-project/pdf-chatbot" element={<PdfChatbot />} />
           <Route
-            path="/school-project/mcauther-outlet"
+            path="/school-project/mcarthur-outlet"
             element={<McautherOutlet />}
-          />
-          <Route
-            path="/school-project/bollen-broodjes"
-            element={<BollenBroodjes />}
           />
           <Route path="/stage-project/wesolved" element={<Wesolved />} />
           <Route path="/stage-project/bikebutler" element={<Bikebutler />} />

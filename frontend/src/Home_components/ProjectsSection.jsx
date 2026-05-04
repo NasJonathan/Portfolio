@@ -9,7 +9,7 @@ const projects = [
       "Een interactieve kerstkalender-app, waarin gebruikers dagelijks verrassingen zoals kortingen en cadeaus kunnen ontgrendelen. Ontworpen om engagement te verhogen tijdens de kerstperiode.",
     image: "/projects/McAuthur/logo.png",
     tags: ["Flutter", "Dart", "JavaScript"],
-    demoUrl: "#",
+    demoUrl: "/school-project/mcarthur-outlet",
     githubUrl: "https://github.com/NasJonathan/Adventskalender-app",
   },
   {
@@ -28,7 +28,7 @@ const projects = [
       "Een AI-gedreven chatbot die PDF-documenten analyseert en users vragen laat stellen over de inhoud.",
     image: "/projects/PdfChatbot/logo.png",
     tags: ["HTML/CSS", "Python", "Javascript"],
-    demoUrl: "#",
+    demoUrl: "/school-project/pdf-chatbot",
     githubUrl: "https://github.com/NanaAma035/Python-PDF-Chatbot/tree/main",
   },
 ];

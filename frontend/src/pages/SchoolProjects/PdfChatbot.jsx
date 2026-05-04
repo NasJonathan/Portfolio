@@ -313,7 +313,7 @@ export const PdfChatbot = () => {
         <section className="mt-20">
           <h2 className="text-3xl font-bold mb-8">Testen</h2>
           <p className="text-muted-foreground leading-relaxed text-start mb-6 font-small italic">
-            Tijdens mijn stage heb ik ook verschillende tests uitgevoerd om de
+            Tijdens dit project heb ik ook verschillende tests uitgevoerd om de
             kwaliteit van de code te waarborgen. Hieronder vind je een overzicht
             van de verschillende tests die ik heb uitgevoerd, inclusief unit
             tests, integratietests en end-to-end tests.
@@ -401,28 +401,6 @@ export const PdfChatbot = () => {
               </div>
             ))}
           </div>
-        </section>
-
-        <section className="mt-20">
-          <h2 className="text-2xl font-bold mb-4"> Verbetervoorstellen </h2>
-          <p className="text-muted-foreground leading-relaxed text-start mb-6 font-small italic">
-            Tijdens mijn stage heb ik ook verschillende verbetervoorstellen
-            gedaan om de codebase en het ontwikkelproces te verbeteren.
-            Hieronder vind je een overzicht van deze voorstellen, inclusief de
-            motivatie erachter en de impact die ze hebben gehad.
-          </p>
-        </section>
-
-        <section className="mt-20">
-          <h2 className="text-2xl font-bold mb-4"> Reflectie </h2>
-          <p className="text-muted-foreground leading-relaxed text-start mb-6 font-small italic">
-            Tot slot wil ik graag een korte reflectie geven op mijn stage bij
-            WeSolved. Deze stage heeft me veel geleerd over softwareontwikkeling
-            in een professionele omgeving, het werken met Odoo en het
-            samenwerken met een team van developers. Ik ben dankbaar voor de
-            kansen die ik heb gekregen en kijk ernaar uit om deze ervaringen mee
-            te nemen in mijn toekomstige carrière.
-          </p>
         </section>
 
         {/* --- MODAL STYLING (WHITE BACKGROUND) --- */}

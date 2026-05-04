@@ -13,24 +13,15 @@ export const schoolprojects = [
     title: "PDF Chatbot",
     description:
       "Beschrijving van het project, de gebruikte technologieën en de resultaten.",
-    tags: ["Python", "GitHub"],
+    tags: ["Python", "GitHub", "OpenAI API"],
   },
   {
     id: 3,
-    slug: "mcauther-outlet",
-    title: "McAuther Outlet",
+    slug: "mcarthur-outlet",
+    title: "McArthur Outlet",
     description:
       "Beschrijving van het project, de gebruikte technologieën en de resultaten.",
-    tags: ["Python", "Odoo"],
-  },
-
-  {
-    id: 4,
-    slug: "bollen-broodjes",
-    title: "BollenBroodjes",
-    description:
-      "Beschrijving van het project, de gebruikte technologieën en de resultaten.",
-    tags: ["Python", "CI/CD"],
+    tags: ["flutter", "Dart"],
   },
 ];
 

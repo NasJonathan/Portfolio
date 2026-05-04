@@ -10,8 +10,6 @@ export const tasks = [
   "K1-W2: Plannen en ontwerp",
   "K1-W3: Realiseert software",
   "K1-W4: Testen",
-  "K1-W5: Verbeter voorstellen",
-  "K2-W8: Reflectie",
 ];
 
 export const documentSets = [
@@ -22,19 +20,25 @@ export const documentSets = [
       {
         id: 1,
         label: "Plan van aanpak",
-        file: "/projects/PdfChatbot.jsx/documents/chatbot.pdf",
+        file: "/projects/PdfChatbot/documents/chatbot.pdf",
       },
       {
         id: 2,
         label: "ontwerp",
-        file: "/projects/PdfChatbot.jsx/documents/chatbot7c.png",
+        file: "/projects/PdfChatbot/documents/chatbot7c.png",
       },
     ],
     plans: [
       {
         id: 1,
-        label: "Planen Trello",
+        label: "Planen trello 2",
         file: "https://trello.com/b/1feAPYs0/chatbot",
+        isExternal: true,
+      },
+      {
+        id: 2,
+        label: "Planen trello 1",
+        file: "https://trello.com/b/s4PgDIoA/personal-ai",
         isExternal: true,
       },
     ],
@@ -43,27 +47,26 @@ export const documentSets = [
 
 export const chatbotImages = [
   {
-    src: "/projects/PdfChatbot.jsx/codes/chatbot code.png",
-    title: "Recieving api reponse",
+    src: "/projects/PdfChatbot/codes/chatbot code.png",
   },
 ];
 
 export const softwareProjects = [
   {
     id: "Pdf",
-    title: "chatbot project",
+    title: "PDF Chatbot",
     description:
-      "Voor dit project was het doel om een automatische notificatie te sturen wanneer een taak over de gealloceerde tijd gaat. De uitdaging was de correctie met een multiplication_factor per project. [cite: 1, 2, 3]",
+      "Het doel van dit project was het ontwikkelen van een AI-chatbot waarmee gebruikers vragen kunnen stellen over de inhoud van geüploade PDF-documenten.",
     solutions: [
       {
-        label: "Odoo Models",
+        label: "Tekst Extractie",
         detail:
-          "Uitbreiding project.task met een Many2one relatie naar project om de factor op te halen[cite: 4, 5].",
+          "Implementatie van een Python-backend die de tekst uit PDF-bestanden leest en verwerkt.",
       },
       {
-        label: "Logic Fix",
+        label: "AI Integratie",
         detail:
-          "Herschrijven _validate_allocated_time met een for task in self loop voor batch-verwerking[cite: 1, 2].",
+          "Koppeling met de OpenAI API gemaakt zodat de chatbot contextuele en nauwkeurige antwoorden kan genereren op basis van de geüploade tekst.",
       },
       {
         label: "Github",
@@ -78,26 +81,26 @@ export const softwareProjects = [
 
 export const testData = [
   {
-    id: "316",
+    id: "pdf-chatbot-test",
     title: "Testen pdf chatbot",
     reportLabel: "Test chat chatbot",
-    reportFile: "/public/projects/PdfChatbot.jsx/documents/chatbottest.pdf", // Ensure this path is correct
+    reportFile: "/projects/PdfChatbot/documents/chatbottest.pdf", // Ensure this path is correct
     videoLabel: "Test Demonstratie Video",
-    videoFile: "/projects/PdfChatbot.jsx/videos/testpdf.mp4", // Ensure this path is correct
+    videoFile: "/projects/PdfChatbot/videos/testpdf.mp4", // Ensure this path is correct
     description:
-      "Voor WES-316 heb ik unit tests geschreven voor de nieuwe functionaliteit die ik heb toegevoegd. Deze tests zorgen ervoor dat de code correct werkt en dat toekomstige wijzigingen geen bestaande functionaliteit breken.",
+      "Voor dit project heb ik de functionaliteit van de chatbot grondig getest om te verzekeren dat PDF-documenten correct worden verwerkt en de AI nauwkeurige antwoorden levert.",
     testItems: [
       {
         label: "Unit Tests",
-        desc: "Ik heb unit tests geschreven voor de nieuwe methoden in de Odoo models, waarbij ik scenario's heb getest zoals het valideren van allocated time met verschillende multiplication factors.",
+        desc: "Ik heb tests uitgevoerd op de Python backend om te verifiëren of de tekstextractie uit PDF-bestanden foutloos verloopt.",
       },
       {
         label: "Integratietests",
-        desc: "Uitgevoerd om te controleren of de nieuwe functionaliteit goed samenwerkt met het triggeren van notificaties.",
+        desc: "Gecontroleerd of de frontend correct communiceert met de backend en of de OpenAI API de juiste antwoorden retourneert.",
       },
       {
         label: "End-to-End Tests",
-        desc: "Het volledige proces getest, van het aanmaken van een taak tot het ontvangen van de notificatie.",
+        desc: "Het volledige proces doorlopen: van het uploaden van een PDF-document en het stellen van een vraag, tot het succesvol ontvangen van het juiste antwoord in de chat.",
       },
     ],
   },
