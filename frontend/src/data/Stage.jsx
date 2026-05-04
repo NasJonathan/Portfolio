@@ -7,6 +7,7 @@ export const stageprojects = [
       "Beschrijving van het project, de gebruikte technologieën en de resultaten.",
     tags: ["Python", "XML"],
   },
+  /*
   {
     id: 2,
     slug: "bikebutler",
@@ -74,6 +75,7 @@ export const stageprojects = [
       "Beschrijving van het project, de gebruikte technologieën en de resultaten.",
     tags: ["Git", "DevOps", "CI/CD"],
   },
+  */
 ];
 
 export const getStageProjectById = (id) => {

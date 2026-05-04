@@ -11,7 +11,6 @@ export const tasks = [
   "K1-W2: Plannen en ontwerp",
   "K1-W3: Realiseert software",
   "K1-W4: Testen",
-  "K1-W5: Verbeter voorstellen",
   "K2-W8: Reflectie",
 ];
 
@@ -65,7 +64,7 @@ export const documentSets = [
   },
   {
     id: "316",
-    title: "Deadline Email Notifications",
+    title: "Deadline email notifications",
     documents: [
       {
         id: 5,
@@ -91,31 +90,6 @@ export const documentSets = [
       },
     ],
   },
-  {
-    id: "325",
-    title: "Logging pull request actions",
-    documents: [
-      { id: 8, label: "Behoefte Analyse" },
-      { id: 9, label: "Functioneel Ontwerp" },
-    ],
-    plans: [
-      { id: 5, label: "Plan 5" },
-      { id: 6, label: "Plan 6" },
-    ],
-  },
-  {
-    id: "368",
-    title: "Create problem desk",
-    documents: [
-      { id: 10, label: "Behoefte Analyse" },
-      { id: 11, label: "Functioneel Ontwerp" },
-      { id: 12, label: "Technisch Ontwerp" },
-    ],
-    plans: [
-      { id: 7, label: "Plan 9" },
-      { id: 8, label: "Plan 10" },
-    ],
-  },
 ];
 
 export const wes316Images = [
@@ -138,72 +112,46 @@ export const wes316Images = [
   },
 ];
 
+export const wes312Images = [
+  { src: "/projects/wesolved/codes/Technical_lead_2.png" },
+  { src: "/projects/wesolved/codes/Technical_lead_assign.png" },
+  { src: "/projects/wesolved/codes/Technical_lead_view_1.png" },
+  { src: "/projects/wesolved/codes/Technical_lead_view_2.png" },
+];
 export const softwareProjects = [
   {
     id: "316",
-    title: "Deadline Email Notifications",
+    title: "Deadline email notifications",
     description:
       "Voor dit project was het doel om een automatische notificatie te sturen wanneer een taak over de gealloceerde tijd gaat. De uitdaging was de correctie met een multiplication_factor per project. [cite: 1, 2, 3]",
     solutions: [
       {
-        label: "Odoo Models",
+        label: "Odoo models",
         detail:
           "Uitbreiding project.task met een Many2one relatie naar project om de factor op te halen[cite: 4, 5].",
       },
       {
-        label: "Logic Fix",
+        label: "Logic fix",
         detail:
           "Herschrijven _validate_allocated_time met een for task in self loop voor batch-verwerking[cite: 1, 2].",
       },
       {
-        label: "Dynamic Logic",
+        label: "Dynamic logic",
         detail:
           "Trigger zodra effective_hours > allocated_hours * factor[cite: 2, 3].",
       },
     ],
     images: wes316Images,
-    video: "/projects/wesolved/Github 316.mp4",
+    video: "/projects/wesolved/videos/Github 316.mp4",
   },
   {
-    id: "325",
-    title: "Logging Pull Request Actions",
+    id: "312+355",
+    title: "Technical field",
     description:
-      "In dit project heb ik een logging mechanisme geïmplementeerd voor pull request acties in Odoo...",
-    solutions: [
-      {
-        label: "Database Schema",
-        detail: "Ontwerp van een nieuw model 'pull.request.log'...",
-      },
-      {
-        label: "Event Listeners",
-        detail: "Toevoegen van listeners op pull request events...",
-      },
-    ],
-    images: wes316Images, // Add specific images for 325 here later
-  },
-  {
-    id: "310+315+334",
-    title: "Deadline Email Notifications",
-    description:
-      "Voor dit project was het doel om een automatische notificatie te sturen wanneer een taak over de gealloceerde tijd gaat. De uitdaging was de correctie met een multiplication_factor per project. [cite: 1, 2, 3]",
-    solutions: [
-      {
-        label: "Odoo Models",
-        detail:
-          "Uitbreiding project.task met een Many2one relatie naar project om de factor op te halen[cite: 4, 5].",
-      },
-      {
-        label: "Logic Fix",
-        detail:
-          "Herschrijven _validate_allocated_time met een for task in self loop voor batch-verwerking[cite: 1, 2].",
-      },
-      {
-        label: "Dynamic Logic",
-        detail:
-          "Trigger zodra effective_hours > allocated_hours * factor[cite: 2, 3].",
-      },
-    ],
-    images: wes316Images,
+      "Een Technical lead toevegen aan een project en ook in alle views tezien",
+
+    solutions: [],
+    images: wes312Images, // Add specific images for 325 here later
   },
 ];
 
@@ -212,9 +160,9 @@ export const testData = [
     id: "316",
     title: "Testen van WES-316",
     reportLabel: "Testplan Rapport WES-316",
-    reportFile: "/document/wesolved/Testplan_316.pdf", // Ensure this path is correct
+    reportFile: "/projects/wesolved/documents/Testplan_316.pdf", // Ensure this path is correct
     videoLabel: "Test Demonstratie Video",
-    videoFile: "/projects/wesolved/Testvideo_316.mp4", // Ensure this path is correct
+    videoFile: "/projects/wesolved/videos/Test(316).mp4", // Ensure this path is correct
     description:
       "Voor WES-316 heb ik unit tests geschreven voor de nieuwe functionaliteit die ik heb toegevoegd. Deze tests zorgen ervoor dat de code correct werkt en dat toekomstige wijzigingen geen bestaande functionaliteit breken.",
     testItems: [
@@ -240,13 +188,6 @@ export const testData = [
     reportFile: "/projects/wesolved/documents/Testplan_Wes[312].pdf", // Ensure this path is correct
     videoLabel: "Test Demonstratie Video",
     videoFile: "/projects/wesolved/videos/Test(312).mp4", // Ensure this path is correct
-    d: "312",
-    title: "Testen van WES-312",
-    reportLabel: "Testplan Rapport WES-312",
-    reportFile: "/projects/wesolved/documents/Testplan_Wes[312].pdf",
-    videoLabel: "Test Demonstratie Video",
-    videoFile: "/projects/wesolved/videos/Test(312).mp4",
-
     description:
       "Voor WES-312 heb ik de nieuwe functionaliteit rondom het Technical Lead veld uitgebreid getest. Deze testen zorgen ervoor dat het veld correct werkt in alle relevante views (form, tree en kanban) en dat gebruikers de Technical Lead intuïtief kunnen toewijzen en beheren.",
 
@@ -264,5 +205,13 @@ export const testData = [
         desc: "Volledige scenario’s getest zoals het toewijzen van een Technical Lead, het verwijderen ervan en het controleren van de weergave in alle views.",
       },
     ],
+  },
+];
+
+export const reflectie = [
+  {
+    id: 1,
+    src: "/projects/wesolved/documents/Wes-reflect.png",
+    title: "Reflectie document",
   },
 ];

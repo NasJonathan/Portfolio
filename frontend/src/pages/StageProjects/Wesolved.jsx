@@ -8,6 +8,7 @@ import {
   technologies,
   softwareProjects,
   testData,
+  reflectie,
 } from "../../data/Wesolved";
 
 export const Wesolved = () => {
@@ -390,7 +391,7 @@ export const Wesolved = () => {
           </div>
         </section>
 
-        <section className="mt-20">
+        {/* <section className="mt-20">
           <h2 className="text-2xl font-bold mb-4"> Verbetervoorstellen </h2>
           <p className="text-muted-foreground leading-relaxed text-start mb-6 font-small italic">
             Tijdens mijn stage heb ik ook verschillende verbetervoorstellen
@@ -398,7 +399,7 @@ export const Wesolved = () => {
             Hieronder vind je een overzicht van deze voorstellen, inclusief de
             motivatie erachter en de impact die ze hebben gehad.
           </p>
-        </section>
+        </section> */}
 
         <section className="mt-20">
           <h2 className="text-2xl font-bold mb-4"> Reflectie </h2>
@@ -410,6 +411,25 @@ export const Wesolved = () => {
             kansen die ik heb gekregen en kijk ernaar uit om deze ervaringen mee
             te nemen in mijn toekomstige carrière.
           </p>
+          <div className="mt-4 grid grid-cols-1 gap-10 items-start p-6 bg-card rounded-lg shadow-md border border-border">
+            {reflectie?.map((item, index) => (
+              <div key={index} className="flex flex-col items-center w-full">
+                <div
+                  className="w-full aspect-video bg-card rounded-lg overflow-hidden shadow-md cursor-pointer relative"
+                  onClick={() => openGallery(reflectie)}
+                >
+                  <img
+                    src={item.src}
+                    className="w-full h-full object-cover"
+                    alt={item.title}
+                  />
+                  <div className="absolute inset-0 bg-black/80 opacity-0 hover:opacity-80 transition-opacity flex items-center justify-center">
+                    <Maximize2 className="text-white w-6 h-6" />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </section>
 
         {/* --- MODAL STYLING (WHITE BACKGROUND) --- */}
@@ -515,7 +535,6 @@ export const Wesolved = () => {
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex justify-between mb-2">
-                <h3 className="font-semibold">GitHub Workflow</h3>
                 <button onClick={() => setIsVideoOpen(false)}>X</button>
               </div>
               <div className="flex-1 bg-black flex items-center justify-center overflow-hidden">
