@@ -7,28 +7,27 @@ const projects = [
     title: "McArthur Designer Outlet",
     description:
       "Een interactieve kerstkalender-app, waarin gebruikers dagelijks verrassingen zoals kortingen en cadeaus kunnen ontgrendelen. Ontworpen om engagement te verhogen tijdens de kerstperiode.",
-    image: "/projects/img-1.jpg",
+    image: "/projects/McAuthur/logo.png",
     tags: ["Flutter", "Dart", "JavaScript"],
     demoUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/NasJonathan/Adventskalender-app",
   },
   {
-    id: 1,
-    title: "Only bowling",
+    id: 2,
+    title: "Onlybowling",
     description:
       "Eee reservatie- en beheersysteem voor bowlingbanen, ontwikkeld om beschikbaarheid te controleren en te reserveren.",
-    image: "/projects/img-2.jpg",
+    image: "/projects/Onlybowling/logo.jpg",
     tags: ["PHP", "HTML/CSS", "MySQL"],
-    demoUrl: "#",
-    githubUrl: "#",
+    demoUrl: "/school-project/onlybowling",
   },
   {
     id: 3,
     title: "PDF-CHATBOT",
     description:
       "Een AI-gedreven chatbot die PDF-documenten analyseert en users vragen laat stellen over de inhoud.",
-    image: "/projects/img.3.jpg",
-    tags: ["HTML/CSS", "python", "Flask"],
+    image: "/projects/PdfChatbot/logo.png",
+    tags: ["HTML/CSS", "Python", "Javascript"],
     demoUrl: "#",
     githubUrl: "https://github.com/NanaAma035/Python-PDF-Chatbot/tree/main",
   },
@@ -58,7 +57,7 @@ export const ProjectsSection = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-80 h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
 
@@ -84,13 +83,23 @@ export const ProjectsSection = () => {
                 </div>
 
                 <div className="flex justify-center space-x-4 mt-auto pt-4">
-                  <a
-                    href={project.demoUrl}
-                    target="_blank"
-                    className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                  >
-                    <ExternalLink size={20} />
-                  </a>
+                  {project.demoUrl.startsWith("/") ? (
+                    <Link
+                      to={project.demoUrl}
+                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                    >
+                      <ExternalLink size={20} />
+                    </Link>
+                  ) : (
+                    <a
+                      href={project.demoUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                    >
+                      <ExternalLink size={20} />
+                    </a>
+                  )}
                   <a
                     href={project.githubUrl}
                     target="_blank"

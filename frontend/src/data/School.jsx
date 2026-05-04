@@ -5,7 +5,7 @@ export const schoolprojects = [
     title: "Onlybowling",
     description:
       "Beschrijving van het project, de gebruikte technologieën en de resultaten.",
-    tags: ["Python", "XML"],
+    tags: ["PHP", "HTML/CSS", "MySql"],
   },
   {
     id: 2,

@@ -10,6 +10,7 @@ import {
   technologies,
   softwareProjects,
   testData,
+  opgeleverd,
 } from "../../data/Onlybowling";
 
 export const Onlybowling = () => {
@@ -23,8 +24,8 @@ export const Onlybowling = () => {
   const openModal = (item) => setSelectedItem(item);
   const closeModal = () => setSelectedItem(null);
 
-  const openGallery = (images) => {
-    setActiveGallery({ images, index: 0 });
+  const openGallery = (images, index = 0) => {
+    setActiveGallery({ images, index });
     setIsGalleryOpen(true);
   };
 
@@ -49,9 +50,6 @@ export const Onlybowling = () => {
               <p className="text-muted-foreground leading-relaxed text-start">
                 De doelstelling van het project is om een reserveringssysteem op
                 te leveren waarmee zowel het klantenbestand als het personeel
-                tevreden is. Gebruiksvriendelijkheid moet de boventoon voeren.De
-                doelstelling van het project is om een reserveringssysteem op te
-                leveren waarmee zowel het klantenbestand als het personeel
                 tevreden is. Gebruiksvriendelijkheid moet de boventoon voeren.
               </p>
             </section>
@@ -123,7 +121,7 @@ export const Onlybowling = () => {
               return (
                 <div key={docSet.id}>
                   <h3 className="text-md font-bold border-b text-primary text-start pb-2 mb-3">
-                    WES-{docSet.id} - {docSet.title}
+                    {docSet.title}
                   </h3>
 
                   <div className="flex gap-6 mb-2">
@@ -218,7 +216,7 @@ export const Onlybowling = () => {
                 <div className="space-y-6">
                   <h3 className="text-lg font-bold text-primary flex items-center gap-2">
                     <span className="w-2 h-2 bg-primary rounded-full"></span>
-                    WES-{project.id} - {project.title}
+                    {project.id} - {project.title}
                   </h3>
                   <div className="prose prose-sm text-muted-foreground leading-snug text-start text-md">
                     <p className="mb-4">{project.description}</p>
@@ -302,10 +300,11 @@ export const Onlybowling = () => {
         <section className="mt-20">
           <h2 className="text-3xl font-bold mb-8">Testen</h2>
           <p className="text-muted-foreground leading-relaxed text-start mb-6 font-small italic">
-            Tijdens mijn stage heb ik ook verschillende tests uitgevoerd om de
-            kwaliteit van de code te waarborgen. Hieronder vind je een overzicht
-            van de verschillende tests die ik heb uitgevoerd, inclusief unit
-            tests, integratietests en end-to-end tests.
+            Tijdens het realiseren van het project heb ik ook verschillende
+            tests uitgevoerd om de kwaliteit van de code te waarborgen.
+            Hieronder vind je een overzicht van de verschillende tests die ik
+            heb uitgevoerd, inclusief unit tests, integratietests en end-to-end
+            tests.
           </p>
 
           <div className="space-y-12">
@@ -331,61 +330,43 @@ export const Onlybowling = () => {
                   </ul>
                 </div>
 
-                {/* RIGHT SIDE: TEST EVIDENCE (REPORT & VIDEO) */}
+                {/* RIGHT SIDE: TEST EVIDENCE (PHOTOS) */}
                 <div className="flex flex-col gap-4">
-                  {/* Test Report Preview */}
-                  <div>
-                    <h4 className="text-[10px] font-bold text-muted-foreground mb-2 uppercase tracking-widest">
-                      Test Rapportage
-                    </h4>
-                    <div
-                      onClick={() =>
-                        openModal({
-                          label: test.reportLabel,
-                          file: test.reportFile,
-                        })
-                      }
-                      className="group relative h-[100px] bg-background border border-border rounded-lg flex items-center justify-center cursor-pointer hover:bg-muted/50 transition-all overflow-hidden"
-                    >
-                      <div className="flex flex-col items-center transition-transform group-hover:scale-105">
-                        <span className="text-red-500 font-bold text-xl">
-                          PDF
-                        </span>
-                        <span className="text-[10px] font-medium text-muted-foreground">
-                          {test.reportLabel}
-                        </span>
-                      </div>
-                      <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <Maximize2 size={20} className="text-primary" />
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Test Video Preview */}
-                  <div>
-                    <h4 className="text-[10px] font-bold text-muted-foreground mb-2 uppercase tracking-widest text-start ">
-                      Test Video
-                    </h4>
-                    <div
-                      onClick={() => {
-                        setActiveVideoUrl(test.videoFile);
-                        setIsVideoOpen(true);
-                      }}
-                      className="relative aspect-video rounded-lg overflow-hidden border border-border group cursor-pointer bg-slate-950 max-w-[280px]"
-                    >
-                      <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 group-hover:bg-black/20 transition-all z-10">
-                        <div className="w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center">
-                          <div className="w-0 h-0 border-t-[6px] border-t-transparent border-l-[12px] border-l-white border-b-[6px] border-b-transparent ml-1" />
+                  {test.images && test.images.length > 0 && (
+                    <div className="relative px-6">
+                      <div
+                        className="aspect-video bg-card rounded-lg overflow-hidden shadow-md cursor-pointer relative"
+                        onClick={() => openGallery(test.images)}
+                      >
+                        <img
+                          src={test.images[0].src}
+                          className="w-full h-full object-cover"
+                          alt="Test Screenshot"
+                        />
+                        <div className="absolute inset-0 bg-black/80 opacity-0 hover:opacity-80 transition-opacity flex items-center justify-center">
+                          <Maximize2 className="text-white w-6 h-6" />
                         </div>
-                        <p className="text-white text-[10px] mt-2 font-medium opacity-80">
-                          Bekijk Testrun
-                        </p>
                       </div>
-                      <div className="w-full h-full bg-slate-900 flex items-center justify-center text-[10px] text-white/20 italic">
-                        Preview Video
-                      </div>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          prevImage();
+                        }}
+                        className="absolute left-1 top-1/2 -translate-y-1/2 bg-primary/80 text-white p-2 rounded-full"
+                      >
+                        <ChevronLeft size={14} />
+                      </button>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          nextImage();
+                        }}
+                        className="absolute right-0 top-1/2 -translate-y-1/2 bg-primary/80 text-white p-2 rounded-full"
+                      >
+                        <ChevronRight size={14} />
+                      </button>
                     </div>
-                  </div>
+                  )}
                 </div>
               </div>
             ))}
@@ -393,25 +374,65 @@ export const Onlybowling = () => {
         </section>
 
         <section className="mt-20">
-          <h2 className="text-2xl font-bold mb-4"> Verbetervoorstellen </h2>
-          <p className="text-muted-foreground leading-relaxed text-start mb-6 font-small italic">
-            Tijdens mijn stage heb ik ook verschillende verbetervoorstellen
-            gedaan om de codebase en het ontwikkelproces te verbeteren.
-            Hieronder vind je een overzicht van deze voorstellen, inclusief de
-            motivatie erachter en de impact die ze hebben gehad.
-          </p>
+          <h2 className="text-3xl font-bold mb-4">
+            Presenteert opgeleverd werk
+          </h2>
+          <div className="text-muted-foreground leading-relaxed text-start mb-6 font-small italic">
+            <p className="mb-4">
+              Na het realiseren van het project moeten wij als groep het bij de
+              klant inleveren, laten zien wat wel en niet gelukt is, uitleggen
+              wat anders had gekund en feedback ontvangen.
+            </p>
+            <div className="mt-4 grid grid-cols-1 gap-10 items-start p-6 bg-card rounded-lg shadow-md border border-border">
+              {opgeleverd?.map((item, index) => (
+                <div key={index} className="flex flex-col items-center">
+                  <div
+                    className="w-full aspect-video bg-card rounded-lg overflow-hidden shadow-md cursor-pointer relative"
+                    onClick={() => openGallery(opgeleverd, index)}
+                  >
+                    <img
+                      src={item.src}
+                      className="w-full h-full object-cover"
+                      alt={item.title}
+                    />
+                    <div className="absolute inset-0 bg-black/80 opacity-0 hover:opacity-80 transition-opacity flex items-center justify-center">
+                      <Maximize2 className="text-white w-6 h-6" />
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
 
         <section className="mt-20">
-          <h2 className="text-2xl font-bold mb-4"> Reflectie </h2>
-          <p className="text-muted-foreground leading-relaxed text-start mb-6 font-small italic">
-            Tot slot wil ik graag een korte reflectie geven op mijn stage bij
-            WeSolved. Deze stage heeft me veel geleerd over softwareontwikkeling
-            in een professionele omgeving, het werken met Odoo en het
-            samenwerken met een team van developers. Ik ben dankbaar voor de
-            kansen die ik heb gekregen en kijk ernaar uit om deze ervaringen mee
-            te nemen in mijn toekomstige carrière.
-          </p>
+          <h2 className="text-3xl font-bold mb-4"> Reflectie </h2>
+          <div className="p-6 shadow-md  text-muted-foreground leading-relaxed text-start mb-6 text-md font-small italic flex flex-col gap-4">
+            <p>
+              Allereerst heb ik door dit project veel geleerd over het werken
+              met databases. Ik heb hier meer ervaring in opgedaan omdat ik me
+              hier binnen de groep voornamelijk op heb gefocust, en daar ben ik
+              erg blij mee.
+            </p>
+            <p>
+              Wat betreft het groepswerk had ik echter gehoopt dat het anders
+              zou verlopen. We zaten in een groep van 3 en hadden slechts zo'n
+              2,5 week de tijd, maar uiteindelijk kwam het grotendeels op mij
+              neer om ervoor te zorgen dat we aan het eind van de dag iets
+              konden presenteren. Teamgenoten deden vrijwel niets of kwamen niet
+              opdagen. Gelukkig ben ik wel blij dat ik uiteindelijk toch een
+              werkend resultaat kon laten zien.
+            </p>
+            <p>
+              Er zijn zeker dingen die beter hadden gekund, zoals de
+              communicatie binnen de groep. Wat ik van dit project heb geleerd,
+              is dat wanneer de communicatie niet goed verloopt, ik sneller een
+              docent of leidinggevende moet inschakelen. Ook heb ik geleerd om
+              meer van mezelf te laten horen en niet te proberen alles in mijn
+              eentje op mijn schouders te dragen. Dit zijn belangrijke
+              leerpunten die ik meeneem naar mijn volgende projecten.
+            </p>
+          </div>
         </section>
 
         {/* --- MODAL STYLING (WHITE BACKGROUND) --- */}
