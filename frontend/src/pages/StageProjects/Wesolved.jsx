@@ -9,6 +9,7 @@ import {
   softwareProjects,
   testData,
   reflectie,
+  verbetervoorstelling,
 } from "../../data/Wesolved";
 
 export const Wesolved = () => {
@@ -391,7 +392,7 @@ export const Wesolved = () => {
           </div>
         </section>
 
-        {/* <section className="mt-20">
+        <section className="mt-20">
           <h2 className="text-2xl font-bold mb-4"> Verbetervoorstellen </h2>
           <p className="text-muted-foreground leading-relaxed text-start mb-6 font-small italic">
             Tijdens mijn stage heb ik ook verschillende verbetervoorstellen
@@ -399,7 +400,48 @@ export const Wesolved = () => {
             Hieronder vind je een overzicht van deze voorstellen, inclusief de
             motivatie erachter en de impact die ze hebben gehad.
           </p>
-        </section> */}
+          <div className="mt-4 grid grid-cols-1 gap-10 items-start p-6 bg-card rounded-lg shadow-md border border-border">
+            {verbetervoorstelling?.map((item, index) => (
+              <div key={index} className="flex flex-col items-center w-full">
+                {item.src?.endsWith(".pdf") ? (
+                  <div
+                    onClick={() =>
+                      openModal({
+                        label: item.title,
+                        file: item.src,
+                      })
+                    }
+                    className="w-full group relative h-[200px] bg-background border border-border rounded-lg flex items-center justify-center cursor-pointer hover:bg-muted/50 transition-all overflow-hidden"
+                  >
+                    <div className="flex flex-col items-center transition-transform group-hover:scale-105">
+                      <span className="text-red-500 font-bold text-4xl mb-2">
+                        PDF
+                      </span>
+                      <span className="text-sm font-medium text-muted-foreground">
+                        {item.title}
+                      </span>
+                    </div>
+                    <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <Maximize2 size={32} className="text-primary" />
+                    </div>
+                  </div>
+                ) : (
+                  <div
+                    className="w-full aspect-video bg-card rounded-lg overflow-hidden shadow-md cursor-pointer relative"
+                    onClick={() => openGallery(verbetervoorstelling)}
+                  >
+                    <img
+                      src={item.src}
+                      className="w-full h-full object-cover"
+                      alt={item.title}
+                    />
+                    <div className="absolute inset-0 bg-black/80 opacity-0 hover:opacity-80 transition-opacity flex items-center justify-center"></div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
 
         <section className="mt-20">
           <h2 className="text-2xl font-bold mb-4"> Reflectie </h2>

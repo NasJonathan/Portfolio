@@ -10,11 +10,11 @@ export const Inleiding = () => {
         mijn expertise in frontend en backend ontwikkeling laten zien.
       </p>
       <p className="mt-6 text-md text-gray-700 text-start">
-        Tijdens mijn studie had ik de Nana kans om stage te lopen bij WeSolved
-        in Kerkrade, een bedrijf dat zich richt op het ontwikkelen van
-        innovatieve softwareoplossingen. Hier had ik de kans gekregen om mijn
-        eigen ervaring en vaardigheden te ontwikkelen en ook nieuwe programma's
-        en technieken konden leren waaronder Python, odoo, xml, github.
+        Tijdens mijn studie had ik de kans om stage te lopen bij WeSolved in
+        Kerkrade, een bedrijf dat zich richt op het ontwikkelen van innovatieve
+        softwareoplossingen. Hier had ik de kans gekregen om mijn eigen ervaring
+        en vaardigheden te ontwikkelen en ook nieuwe programma's en technieken
+        konden leren waaronder Python, odoo, xml, github.
         <br />
         Wat ik vooral deed was het ontwikkelen van softwareoplossingen voor
         verschillende projecten die gedeeld werden in taaken, en mijn bijdrage

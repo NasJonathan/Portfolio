@@ -7,7 +7,7 @@ export const Stage = () => {
     <section id="stage" className="mt-8 pt-20">
       <h1 className="text-4xl font-bold mb-4">WeSolved</h1>
       <p className="text-lg text-gray-700  text-start">
-        Tijdens mijn stage bij WeSolved heb ik de kans gehad om te werken aan
+        Tijdens mijn stage bij WeSolved had ik de kans gehad om te werken aan
         verschillende taken, maar ook het testen, debuggen en migreren van
         software. Projecten werden in taken verdeeld waarbij elke developer een
         taak toegewezen kreeg. Mijn bijdrage aan het team bestond uit het

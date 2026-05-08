@@ -52,13 +52,11 @@ export const documentSets = [
         id: 2,
         label: "Requirements 312",
         video: "/projects/wesolved/videos/Taak(312).mp4",
-        isExternal: true,
       },
       {
         id: 3,
         label: "Requirements 335",
         video: "/projects/wesolved/videos/Taak(335).mp4",
-        isExternal: true,
       },
     ],
   },
@@ -160,7 +158,7 @@ export const testData = [
     id: "316",
     title: "Testen van WES-316",
     reportLabel: "Testplan Rapport WES-316",
-    reportFile: "/projects/wesolved/documents/Testplan_316.pdf", // Ensure this path is correct
+    reportFile: "/projects/wesolved/documents/Testenplan(316).pdf", // Ensure this path is correct
     videoLabel: "Test Demonstratie Video",
     videoFile: "/projects/wesolved/videos/Test(316).mp4", // Ensure this path is correct
     description:
@@ -213,5 +211,13 @@ export const reflectie = [
     id: 1,
     src: "/projects/wesolved/documents/Wes-reflect.png",
     title: "Reflectie document",
+  },
+];
+
+export const verbetervoorstelling = [
+  {
+    id: 1,
+    src: "/projects/wesolved/documents/Verbetervoorstellen (316).pdf",
+    title: "Verbetervoorstelling document",
   },
 ];
