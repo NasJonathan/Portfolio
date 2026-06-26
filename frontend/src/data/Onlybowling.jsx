@@ -40,6 +40,11 @@ export const documentSets = [
         label: "Goedkeuring",
         file: "/projects/Onlybowling/documents/Onlybowling-GO.png",
       },
+      {
+        id: 5,
+        label: "Database Ontwerp",
+        file: "/projects/Onlybowling/documents/ERD-ONLYBOWLING.png",
+      },
     ],
     plans: [
       {

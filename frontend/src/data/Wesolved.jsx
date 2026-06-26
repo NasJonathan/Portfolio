@@ -38,7 +38,7 @@ export const documentSets = [
       {
         id: 4,
         label: "Technisch Ontwerp",
-        file: "/projects/wesolved/documents/TO WES[312+355].pdf",
+        file: "/projects/wesolved/documents/TO WES[312].pdf",
       },
     ],
     plans: [
@@ -111,7 +111,7 @@ export const wes316Images = [
 ];
 
 export const wes312Images = [
-  { src: "/projects/wesolved/codes/Technical_lead_2.png" },
+  { src: "/projects/wesolved/codes/Technical_lead_1.png" },
   { src: "/projects/wesolved/codes/Technical_lead_assign.png" },
   { src: "/projects/wesolved/codes/Technical_lead_view_1.png" },
   { src: "/projects/wesolved/codes/Technical_lead_view_2.png" },

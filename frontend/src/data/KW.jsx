@@ -14,7 +14,7 @@ export const Kerntaak1 = [
           "/projects/wesolved/documents/BA_WES[316].pdf",
           "/projects/wesolved/documents/FO_WES[316].pdf",
           "/projects/wesolved/documents/TO_WES(316).pdf",
-          "/projects/wesolved/documents/TO WES[312+355].pdf",
+          "/projects/wesolved/documents/TO WES[312].pdf",
         ],
       },
       {
@@ -26,6 +26,13 @@ export const Kerntaak1 = [
         files: [
           "/projects/McAuthur/documents/BA-Mca.pdf",
           "/projects/McAuthur/documents/FO- Mca.pdf",
+        ],
+      },
+      {
+        label: "Onlybowling",
+        files: [
+          "/projects/Onlybowling/documents/Onlybowling-FO.pdf",
+          "/projects/Onlybowling/documents/ERD-ONLYBOWLING.png",
         ],
       },
     ],
@@ -63,6 +70,7 @@ export const Kerntaak1 = [
           "/projects/wesolved/codes/316_code3.png",
           "/projects/wesolved/codes/316_code4.png",
           "/projects/wesolved/codes/316_code5.png",
+          "/projects/wesolved/codes/Technical_lead_1.png",
           "/projects/wesolved/codes/Technical_lead_2.png",
           "/projects/wesolved/codes/Technical_lead_assign.png",
           "/projects/wesolved/codes/Technical_lead_view_1.png",
@@ -125,6 +133,10 @@ export const Kerntaak1 = [
     links: [
       { label: "Timmermans", files: ["/projects/K1/document/TNN-vebeter.pdf"] },
       { label: "BikeButler", files: ["/projects/K1/document/BB-vebeter.pdf"] },
+      {
+        label: "Onlybowling",
+        files: ["/projects/Onlybowling/documents/OB-verbetering.pdf"],
+      },
     ],
   },
 ];
